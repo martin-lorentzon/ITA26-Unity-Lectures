@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f4f4dddb88568ae45af4991c9d7bf401
+guid: 16b7f1cd8637ac04e845eb1962f1fdcb
 ModelImporter:
   serializedVersion: 24600
   internalIDToNameTable: []
@@ -39,7 +39,7 @@ ModelImporter:
     addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
-    preBakeConvexCollisionMesh: 1
+    preBakeConvexCollisionMesh: 0
     preBakeTriangleCollisionMesh: 0
     importPhysicalCameras: 1
     importVisibility: 1
