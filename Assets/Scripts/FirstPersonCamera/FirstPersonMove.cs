@@ -8,6 +8,7 @@ public class FirstPersonMove : MonoBehaviour
 
     [Header("Movement")]
     public float moveSpeed = 3f;
+    public float sprintSpeed = 6f;
     public float jumpForce = 200f;
     public float airControl = 2f;
 
@@ -28,6 +29,7 @@ public class FirstPersonMove : MonoBehaviour
         float hInput = Input.GetAxisRaw("Horizontal");
         float vInput = Input.GetAxisRaw("Vertical");
         bool spacebar = Input.GetKeyDown(KeyCode.Space);
+        bool leftShift = Input.GetKey(KeyCode.LeftShift);  // For sprinting
 
         Vector3 moveVector = (transform.forward * vInput) + (transform.right * hInput);
 
@@ -35,7 +37,10 @@ public class FirstPersonMove : MonoBehaviour
         if (moveVector.magnitude > 1f)
             moveVector = moveVector.normalized;
 
-        moveVector *= moveSpeed;
+        if (leftShift)
+            moveVector *= sprintSpeed;
+        else
+            moveVector *= moveSpeed;
 
         // Ground check
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight / 2f + 0.1f, whatIsGround);
